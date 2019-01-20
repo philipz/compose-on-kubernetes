@@ -19,7 +19,7 @@ tar xvf helm-v2.12.1-linux-amd64.tar.gz
 
 
 ## export PATH=$PATH:/root/linux-amd64
-cp -rf install-amd64/helm /usr/local/bin/
+cp -rf linux-amd64/helm /usr/local/bin/
 
 echo "Creating tiller under kube-system namespace..."
 
