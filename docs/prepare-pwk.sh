@@ -19,8 +19,8 @@ tar xvf helm-v2.12.1-linux-amd64.tar.gz
 ## Adding Helm to PATH 
 
 
-export PATH=$PATH:/root/linux-amd64
-
+## export PATH=$PATH:/root/linux-amd64
+cp -rf install-amd64/helm /usr/local/bin/
 
 echo "Creating tiller under kube-system namespace..."
 
@@ -55,11 +55,15 @@ cd compose-on-kubernetes
 
 wget https://github.com/docker/compose-on-kubernetes/releases/download/v0.4.18/installer-linux
 chmod +x installer-linux
-./installer -namespace=compose -etcd-servers=http://compose-etcd-client:2379 -tag=v0.4.16 
+./installer-linux -namespace=compose -etcd-servers=http://compose-etcd-client:2379 -tag=v0.4.18 
 
 ## Verifying 
 
 kubectl api-versions | grep compose
+
+## Building up App Stack
+
+docker stack deploy --orchestrator=kubernets -c docker-compose.yml hellostack
 
 ## Getting the Stack
 
