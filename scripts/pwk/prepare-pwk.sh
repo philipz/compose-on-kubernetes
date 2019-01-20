@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ## ********************************** ####
-Creating Compose Namespace
+## Creating Compose Namespace
 ## ********************************** ####
 
 echo "Creating Compose Namespace..."
