@@ -9,8 +9,7 @@ kubectl create namespace compose
 
 
 echo "Installing Helm..."
-curl https://storage.googleapis.com/kubernetes-helm/helm-v2.12.1-linux-amd64.tar.gz -o helm-v2.12.1-linux-amd64.tar.gz``
-
+curl https://storage.googleapis.com/kubernetes-helm/helm-v2.12.1-linux-amd64.tar.gz -o helm-v2.12.1-linux-amd64.tar.gz
 ## Unzip Helm
 
 echo "Preparing Helm"
@@ -29,10 +28,10 @@ kubectl -n kube-system create serviceaccount tiller
 
 kubectl create clusterrolebinding tiller-cluster-rule --clusterrole=cluster-admin --serviceaccount=kube-system:tiller
 
-./helm init --service-account tiller --upgrade
+helm init --service-account tiller --upgrade
 # wait until helm list works
-./helm list
-./helm install --name etcd-operator stable/etcd-operator --namespace compose
+helm list
+helm install --name etcd-operator stable/etcd-operator --namespace compose
 
 kubectl apply -f - << EOF
  apiVersion: "etcd.database.coreos.com/v1beta2"
@@ -47,9 +46,7 @@ EOF
 
 ## Cloning the Compose on Kubernetes Repository
 
-echo "Cloning Compose on K8s Repo..."
-git clone https://github.com/collabnix/compose-on-kubernetes
-cd compose-on-kubernetes
+
 
 ## Download the installer
 
