@@ -37,7 +37,9 @@ sleep 10
 echo " Tiller is still coming up...Please Wait"
 kubectl -n kube-system get po
 
-sleep 5
+echo " Tiller is still coming up...Have Patience"
+sleep 10
+
 
 echo "Tiller is still coming up..Please wait"
 kubectl -n kube-system get po
@@ -60,7 +62,9 @@ kubectl apply -f - << EOF
    size: 3
    version: "3.2.13"
 EOF
+sleep 10
 
+echo "Tiller is still coming up.. Please Wait"
 kubectl -n kube-system get po
 ## Download the Compose installer
 
