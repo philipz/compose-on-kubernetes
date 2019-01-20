@@ -63,7 +63,7 @@ kubectl api-versions | grep compose
 
 ## Building up App Stack
 
-docker stack deploy --orchestrator=kubernets -c docker-compose.yml hellostack
+docker stack deploy --orchestrator=kubernetes -c docker-compose.yml hellostack
 
 ## Getting the Stack
 
