@@ -44,11 +44,7 @@ kubectl apply -f - << EOF
    version: "3.2.13"
 EOF
 
-## Cloning the Compose on Kubernetes Repository
-
-
-
-## Download the installer
+## Download the Compose installer
 
 wget https://github.com/docker/compose-on-kubernetes/releases/download/v0.4.18/installer-linux
 chmod +x installer-linux
