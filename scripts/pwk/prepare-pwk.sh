@@ -31,6 +31,7 @@ kubectl create clusterrolebinding tiller-cluster-rule --clusterrole=cluster-admi
 helm init --service-account tiller --upgrade
 # wait until helm list works
 sleep 5
+helm init --service-account tiller --upgrade
 helm list
 helm install --name etcd-operator stable/etcd-operator --namespace compose
 
