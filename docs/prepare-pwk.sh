@@ -46,6 +46,8 @@ EOF
 
 ## Download the Compose installer
 
+yum install -y wget
+
 wget https://github.com/docker/compose-on-kubernetes/releases/download/v0.4.18/installer-linux
 chmod +x installer-linux
 ./installer-linux -namespace=compose -etcd-servers=http://compose-etcd-client:2379 -tag=v0.4.18 
