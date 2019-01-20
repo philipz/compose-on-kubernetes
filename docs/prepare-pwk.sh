@@ -29,6 +29,7 @@ kubectl -n kube-system create serviceaccount tiller
 kubectl create clusterrolebinding tiller-cluster-rule --clusterrole=cluster-admin --serviceaccount=kube-system:tiller
 
 helm init --service-account tiller --upgrade
+sleep 5
 # wait until helm list works
 helm list
 helm install --name etcd-operator stable/etcd-operator --namespace compose
