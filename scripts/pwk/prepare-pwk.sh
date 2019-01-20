@@ -32,7 +32,7 @@ kubectl create clusterrolebinding tiller-cluster-rule --clusterrole=cluster-admi
 
 helm init --service-account tiller --upgrade
 # wait until helm list works
-sleep 10
+sleep 15
 
 echo " Tiller is still coming up...Please Wait"
 kubectl -n kube-system get po
@@ -58,7 +58,7 @@ kubectl apply -f - << EOF
    size: 3
    version: "3.2.13"
 EOF
-
+sleep 10
 kubectl -n kube-system get po
 ## Download the Compose installer
 
