@@ -50,7 +50,7 @@ bin/installer: cmd/installer FORCE
 
 bin/%: cmd/% FORCE
 	@echo "🌟 $@"
-	@go build $(VERBOSE_GO) $(GOBUILD_FLAGS) -ldflags=$(LDFLAGS) -o $@$(EXEC_EXT) ./$<
+	@GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build $(VERBOSE_GO) $(GOBUILD_FLAGS) -ldflags=$(LDFLAGS) -o $@$(EXEC_EXT) ./$<
 
 e2e-binary: ## make the end to end test binary
 	@echo " $@"
