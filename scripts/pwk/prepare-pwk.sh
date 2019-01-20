@@ -30,6 +30,7 @@ kubectl create clusterrolebinding tiller-cluster-rule --clusterrole=cluster-admi
 
 helm init --service-account tiller --upgrade
 # wait until helm list works
+sleep 5
 helm list
 helm install --name etcd-operator stable/etcd-operator --namespace compose
 
@@ -43,6 +44,10 @@ kubectl apply -f - << EOF
    size: 3
    version: "3.2.13"
 EOF
+
+## Installing wget
+
+yum install -y wget
 
 ## Download the Compose installer
 
