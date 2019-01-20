@@ -19,7 +19,7 @@ tar xvf helm-v2.12.1-linux-amd64.tar.gz
 
 
 ## export PATH=$PATH:/root/linux-amd64
-cp -rf linux-amd64/helm /usr/local/bin/
+cp -rf linux-amd64/* /usr/local/bin/
 
 echo "Creating tiller under kube-system namespace..."
 
@@ -30,7 +30,16 @@ kubectl create clusterrolebinding tiller-cluster-rule --clusterrole=cluster-admi
 
 helm init --service-account tiller --upgrade
 # wait until helm list works
+sleep 10
+
+echo " Tiller is still coming up...Please Wait"
+kubectl -n kube-system get po
+
 sleep 5
+
+echo "Tiller is still coming up..Please wait"
+kubectl -n kube-system get po
+
 helm list
 helm install --name etcd-operator stable/etcd-operator --namespace compose
 
