@@ -31,10 +31,14 @@ kubectl create clusterrolebinding tiller-cluster-rule --clusterrole=cluster-admi
 helm init --service-account tiller --upgrade
 # wait until helm list works
 sleep 5
-helm init --service-account tiller --upgrade
 helm list
 helm install --name etcd-operator stable/etcd-operator --namespace compose
 
+## Installing wget
+
+yum install -y wget
+
+helm init --service-account tiller --upgrade
 kubectl apply -f - << EOF
  apiVersion: "etcd.database.coreos.com/v1beta2"
  kind: "EtcdCluster"
@@ -46,10 +50,7 @@ kubectl apply -f - << EOF
    version: "3.2.13"
 EOF
 
-## Installing wget
-
-yum install -y wget
-
+kubectl -n kube-system get po
 ## Download the Compose installer
 
 wget https://github.com/docker/compose-on-kubernetes/releases/download/v0.4.18/installer-linux
