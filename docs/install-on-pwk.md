@@ -23,7 +23,7 @@ Kops, short for Kubernetes Operations, is a set of tools for installing, operati
 
 ```
 git clone https://github.com/collabnix/compose-on-kubernetes
-cd compose-on-kubernetes
+cd compose-on-kubernetes/scripts/pwk/
 sh bootstrap-pwk.sh
 ```
 
