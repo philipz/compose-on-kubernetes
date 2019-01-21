@@ -1,7 +1,7 @@
 
 # Compose on Kubernetes for Play with Kubernetes(PWK)
 
-Why Compose on Kubernetes? 
+## Why Compose on Kubernetes? 
 
 The Kubernetes API is really quite large. There are more than 50 first-class objects in the latest release, from Pods and Deployments to ValidatingWebhookConfiguration and ResourceQuota. This can lead to a verbosity in configuration, which then needs to be managed by you, the developer. 
 
