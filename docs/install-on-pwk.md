@@ -1,5 +1,3 @@
-# Compose on Kubernetes for PWK Playground
-
 
 # Compose on Kubernetes for Play with Kubernetes(PWK)
 
