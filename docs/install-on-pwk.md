@@ -326,6 +326,13 @@ NAME         SERVICES   PORTS        STATUS                            CREATED A
 hellostack   2          web1: 8082   Progressing (Stack is starting)   2019-01-21T14:30:10Z
 ```
 
+## Verifying the Stack
+
+```
+[node1 pwk]$ kubectl get stack
+NAME         SERVICES   PORTS        STATUS                         CREATED AT
+hellostack   2          web1: 8082   Available (Stack is started)   2019-01-21T14:30:10Z
+```
 
 
 
