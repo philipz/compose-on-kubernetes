@@ -48,16 +48,7 @@ helm install --name etcd-operator stable/etcd-operator --namespace compose
 yum install -y wget
 
 helm init --service-account tiller --upgrade
-kubectl apply -f - << EOF
- apiVersion: "etcd.database.coreos.com/v1beta2"
- kind: "EtcdCluster"
- metadata:
-   name: "compose-etcd"
-   namespace: "compose"
- spec:
-   size: 3
-   version: "3.2.13"
-EOF
+kubectl apply -f compose-etcd.yaml
 sleep 10
 kubectl -n kube-system get po
 ## Download the Compose installer
