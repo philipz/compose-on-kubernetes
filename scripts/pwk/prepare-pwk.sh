@@ -42,7 +42,7 @@ sleep 10
 
 helm list
 helm install --name etcd-operator stable/etcd-operator --namespace compose
-sleep 10
+sleep 15
 
 ## Create an etcd cluster
 
