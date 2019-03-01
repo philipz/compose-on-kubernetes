@@ -38,21 +38,20 @@ kubectl -n kube-system get po
 
 sleep 10
 
+## Deploy etcd operator
+
 helm list
 helm install --name etcd-operator stable/etcd-operator --namespace compose
 sleep 10
 
-## Installing wget
+## Create an etcd cluster
 
-yum install -y wget
-
-helm init --service-account tiller --upgrade
 kubectl apply -f compose-etcd.yaml
 sleep 10
 kubectl -n kube-system get po
 ## Download the Compose installer
 
-wget https://github.com/docker/compose-on-kubernetes/releases/download/v0.4.18/installer-linux
+curl -L https://github.com/docker/compose-on-kubernetes/releases/download/v0.4.18/installer-linux -o installer-linux
 chmod +x installer-linux
 ./installer-linux -namespace=compose -etcd-servers=http://compose-etcd-client:2379 -tag=v0.4.18
 
