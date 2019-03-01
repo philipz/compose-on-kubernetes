@@ -47,7 +47,7 @@ sleep 10
 ## Create an etcd cluster
 
 kubectl apply -f compose-etcd.yaml
-sleep 10
+sleep 15
 kubectl -n kube-system get po
 ## Download the Compose installer
 
