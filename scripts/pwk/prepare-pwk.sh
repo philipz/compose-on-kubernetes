@@ -58,10 +58,12 @@ chmod +x installer-linux
 ./installer-linux -namespace=compose -etcd-servers=http://compose-etcd-client:2379 -tag=v0.4.19 
 
 ## Verifying 
+sleep 10
 
 kubectl api-versions | grep compose
 
 ## Building up App Stack
+sleep 10
 
 docker stack deploy --orchestrator=kubernetes -c docker-compose.yml hellostack
 
